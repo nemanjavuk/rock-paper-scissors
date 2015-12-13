@@ -19,19 +19,19 @@ public class RockChoiceTest {
     @Test
     public void testCompareWithRockChoice() {
         RockChoice rockChoiceAgain = new RockChoice();
-        Assert.assertEquals(Outcome.TIE, rockChoice.compare(rockChoiceAgain));
+        Assert.assertEquals(BattleOutcome.TIE, rockChoice.compare(rockChoiceAgain));
     }
 
     @Test
     public void testCompareWithPaperChoice() {
         PaperChoice paperChoice = new PaperChoice();
-        Assert.assertEquals(Outcome.LOSES, rockChoice.compare(paperChoice));
+        Assert.assertEquals(BattleOutcome.LOSES, rockChoice.compare(paperChoice));
     }
 
     @Test
     public void testCompareWithScissorsChoice() {
         ScissorsChoice scissorsChoice = new ScissorsChoice();
-        Assert.assertEquals(Outcome.BEATS, rockChoice.compare(scissorsChoice));
+        Assert.assertEquals(BattleOutcome.BEATS, rockChoice.compare(scissorsChoice));
     }
 
     @Test(expected = NullPointerException.class)

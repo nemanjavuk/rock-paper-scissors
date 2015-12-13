@@ -10,17 +10,17 @@ public class PaperChoice extends Choice {
     }
 
     @Override
-    public Outcome compare(Choice otherChoice) {
+    public BattleOutcome compare(Choice otherChoice) {
         if (otherChoice == null) {
             throw new NullPointerException();
         }
-        switch (otherChoice.getChoiceOption()) {
+        switch (otherChoice.choiceOption) {
             case PAPER:
-                return Outcome.TIE;
+                return BattleOutcome.TIE;
             case ROCK:
-                return Outcome.BEATS;
+                return BattleOutcome.BEATS;
             case SCISSORS:
-                return Outcome.LOSES;
+                return BattleOutcome.LOSES;
             default:
                 throw new RuntimeException();
         }

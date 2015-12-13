@@ -1,5 +1,6 @@
-package com.github.nemanjavuk.rps.model;
+package com.github.nemanjavuk.rps;
 
+import com.github.nemanjavuk.rps.model.BattleOutcome;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,6 +44,6 @@ public class PlayerTest {
         Player otherPlayer = new Player();
         otherPlayer.makeChoice("r");
 
-        Assert.assertEquals(Outcome.LOSES, player.compareAgainst(otherPlayer));
+        Assert.assertEquals(BattleOutcome.LOSES, player.compareAgainst(otherPlayer));
     }
 }

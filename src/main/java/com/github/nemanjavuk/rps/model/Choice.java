@@ -7,9 +7,6 @@ public abstract class Choice {
 
     protected ChoiceOption choiceOption;
 
-    public abstract Outcome compare(Choice otherChoice);
+    public abstract BattleOutcome compare(Choice otherChoice);
 
-    public ChoiceOption getChoiceOption() {
-        return choiceOption;
-    }
 }

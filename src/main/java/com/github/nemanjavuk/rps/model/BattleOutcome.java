@@ -3,7 +3,7 @@ package com.github.nemanjavuk.rps.model;
 /**
  * Created by nemanja.
  */
-public enum Outcome {
+public enum BattleOutcome {
 
     BEATS,
     LOSES,
