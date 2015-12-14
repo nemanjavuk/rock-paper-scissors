@@ -3,18 +3,18 @@ package com.github.nemanjavuk.rps.model;
 /**
  * Created by nemanja.
  */
-public class ScissorsChoice extends Choice {
+public class ScissorsWeapon extends Weapon {
 
-    public ScissorsChoice() {
-        choiceOption = ChoiceOption.SCISSORS;
+    public ScissorsWeapon() {
+        super(WeaponType.SCISSORS);
     }
 
     @Override
-    public BattleOutcome compare(Choice otherChoice) {
-        if (otherChoice == null) {
+    public BattleOutcome compare(Weapon otherWeapon) {
+        if (otherWeapon == null) {
             throw new NullPointerException();
         }
-        switch (otherChoice.choiceOption) {
+        switch (otherWeapon.getWeaponType()) {
             case SCISSORS:
                 return BattleOutcome.TIE;
             case ROCK:

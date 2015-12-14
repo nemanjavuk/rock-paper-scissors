@@ -7,30 +7,30 @@ import org.junit.Test;
 /**
  * Created by nemanja.
  */
-public class RockChoiceTest {
+public class RockWeaponTest {
 
-    RockChoice rockChoice;
+    RockWeapon rockChoice;
 
     @Before
     public void setUp() {
-        rockChoice = new RockChoice();
+        rockChoice = new RockWeapon();
     }
 
     @Test
     public void testCompareWithRockChoice() {
-        RockChoice rockChoiceAgain = new RockChoice();
+        RockWeapon rockChoiceAgain = new RockWeapon();
         Assert.assertEquals(BattleOutcome.TIE, rockChoice.compare(rockChoiceAgain));
     }
 
     @Test
     public void testCompareWithPaperChoice() {
-        PaperChoice paperChoice = new PaperChoice();
+        PaperWeapon paperChoice = new PaperWeapon();
         Assert.assertEquals(BattleOutcome.LOSES, rockChoice.compare(paperChoice));
     }
 
     @Test
     public void testCompareWithScissorsChoice() {
-        ScissorsChoice scissorsChoice = new ScissorsChoice();
+        ScissorsWeapon scissorsChoice = new ScissorsWeapon();
         Assert.assertEquals(BattleOutcome.BEATS, rockChoice.compare(scissorsChoice));
     }
 

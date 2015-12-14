@@ -3,18 +3,18 @@ package com.github.nemanjavuk.rps.model;
 /**
  * Created by nemanja.
  */
-public class PaperChoice extends Choice {
+public class PaperWeapon extends Weapon {
 
-    public PaperChoice() {
-        choiceOption = ChoiceOption.PAPER;
+    public PaperWeapon() {
+        super(WeaponType.PAPER);
     }
 
     @Override
-    public BattleOutcome compare(Choice otherChoice) {
-        if (otherChoice == null) {
+    public BattleOutcome compare(Weapon otherWeapon) {
+        if (otherWeapon == null) {
             throw new NullPointerException();
         }
-        switch (otherChoice.choiceOption) {
+        switch (otherWeapon.getWeaponType()) {
             case PAPER:
                 return BattleOutcome.TIE;
             case ROCK:
