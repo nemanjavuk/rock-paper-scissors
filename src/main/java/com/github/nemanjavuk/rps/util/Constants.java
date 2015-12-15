@@ -21,6 +21,7 @@ public class Constants {
     public static final String CHOOSE_WEAPON = "Choose [R]ock, [P]aper or [S]cissors";
     public static final String HUMAN_VS_COMPUTER = "h";
     public static final String COMPUTER_VS_COMPUTER = "c";
-
+    public static final String TIE = "It's a tie";
+    public static final String WON_TURN_WITH = " won turn with ";
 
 }

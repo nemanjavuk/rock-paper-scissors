@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by nemanja.
  */
-public class PlayerTest extends BaseTestWithMocks {
+public class PlayerTest extends BaseTest {
 
     @Mock
     private KeyboardInput dummyInputDevice;

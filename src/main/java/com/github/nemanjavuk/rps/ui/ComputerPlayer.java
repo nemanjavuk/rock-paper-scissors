@@ -18,4 +18,9 @@ public class ComputerPlayer implements Player {
     public PlayCommand nextMove() {
         return playCommandFactory.createRandomPlayCommand();
     }
+
+    @Override
+    public boolean isHumanPlayer() {
+        return false;
+    }
 }

@@ -9,4 +9,6 @@ public interface Player {
 
     public PlayCommand nextMove();
 
+    public boolean isHumanPlayer();
+
 }

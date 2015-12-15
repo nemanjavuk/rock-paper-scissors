@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by nemanja on 12/13/15.
+ * Created by nemanja.
  */
 public class WeaponFactoryTest {
 

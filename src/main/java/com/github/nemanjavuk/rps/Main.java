@@ -1,9 +1,6 @@
 package com.github.nemanjavuk.rps;
 
-import com.github.nemanjavuk.rps.model.Game;
-import com.github.nemanjavuk.rps.model.PlayCommand;
-import com.github.nemanjavuk.rps.model.PlayCommandFactory;
-import com.github.nemanjavuk.rps.model.WeaponFactory;
+import com.github.nemanjavuk.rps.model.*;
 import com.github.nemanjavuk.rps.model.exceptions.InvalidInputException;
 import com.github.nemanjavuk.rps.ui.*;
 import com.github.nemanjavuk.rps.util.Constants;
@@ -30,6 +27,7 @@ public class Main {
             while (invalidGameType) {
                 System.out.println(Constants.GAME_TYPE_CHOSER);
                 String gameType = keyboard.next();
+
                 if (Constants.HUMAN_VS_COMPUTER.equalsIgnoreCase(gameType)) {
                     //H vs C game
                     invalidGameType = true;
@@ -84,10 +82,16 @@ public class Main {
 
             PlayCommand player2Move = player2.nextMove();
 
-            //TODO:nemanja:add informing who did what move
+            System.out.println("Player 1 move is " + player1Move.getWeaponOfChoice().toString());
+            System.out.println("Player 2 move is " + player2Move.getWeaponOfChoice().toString());
 
-            game.finishTurn(player1Move, player2Move);
+            TurnOutcome turnOutcome = game.finishTurn(player1Move, player2Move);
 
+            if (turnOutcome.isTie()) {
+                System.out.println(Constants.TIE);
+            } else {
+                System.out.println(turnOutcome.getWinnerName() + Constants.WON_TURN_WITH + turnOutcome.getWinnerWeapon());
+            }
             System.out.println(game);
             System.out.println(Constants.GO_FOR_ANOTHER_TURN);
 
@@ -95,8 +99,9 @@ public class Main {
             while (invalidResponse) {
                 String continueText = keyboard.next();
                 if (Constants.NO.equalsIgnoreCase(continueText)) {
+                    game.finishGame();
                     System.out.println(Constants.OK_AS_YOU_WISH);
-                    System.out.println(Constants.FINAL_RESULT_IS + game);
+                    System.out.println(game);
                     invalidResponse = false;
                     goForAnotherTurn = false;
                 } else if (Constants.YES.equalsIgnoreCase(continueText)) {
@@ -107,7 +112,5 @@ public class Main {
                 }
             }
         }
-
-
     }
 }

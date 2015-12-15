@@ -6,7 +6,7 @@ import org.mockito.MockitoAnnotations;
 /**
  * Created by nemanja on 12/15/15.
  */
-public class BaseTestWithMocks {
+public class BaseTest {
 
     @Before
     public void initMocks() {

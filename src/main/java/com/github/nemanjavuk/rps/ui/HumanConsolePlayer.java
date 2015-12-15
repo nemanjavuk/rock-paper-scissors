@@ -25,4 +25,9 @@ public class HumanConsolePlayer implements Player {
         }
         return playCommandFactory.createPlayCommandFromInput(nextMove);
     }
+
+    @Override
+    public boolean isHumanPlayer() {
+        return true;
+    }
 }

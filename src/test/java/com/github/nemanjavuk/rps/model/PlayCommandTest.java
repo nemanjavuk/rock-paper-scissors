@@ -8,9 +8,9 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.when;
 
 /**
- * Created by nemanja on 12/14/15.
+ * Created by nemanja.
  */
-public class PlayCommandTest extends BaseTestWithMocks {
+public class PlayCommandTest extends BaseTest {
 
     @Mock
     private WeaponFactory dummyWeaponFactory;

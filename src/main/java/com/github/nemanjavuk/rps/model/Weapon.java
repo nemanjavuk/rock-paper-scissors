@@ -17,6 +17,10 @@ public abstract class Weapon {
         this.weaponType = weaponType;
     }
 
+    public String getWeaponName() {
+        return weaponType.getFullName();
+    }
+
     @Override
     public String toString() {
         return weaponType.getFullName();

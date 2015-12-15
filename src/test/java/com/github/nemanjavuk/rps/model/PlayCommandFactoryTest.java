@@ -11,7 +11,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by nemanja.
  */
-public class PlayCommandFactoryTest extends BaseTestWithMocks {
+public class PlayCommandFactoryTest extends BaseTest {
 
     private PlayCommandFactory playCommandFactory;
 
