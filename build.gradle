@@ -14,3 +14,11 @@ dependencies {
     testCompile "junit:junit:4.12"
     testCompile "org.mockito:mockito-core:1.+"
 }
+
+apply plugin: 'application'
+mainClassName = "com.github.nemanjavuk.rps.Main"
+
+run {
+    standardInput = System.in
+}
+
