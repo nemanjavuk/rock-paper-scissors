@@ -1,5 +1,6 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.WeaponComparisonException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class PaperWeaponTest {
         Assert.assertEquals(BattleOutcome.LOSES, paperChoice.compare(scissorsChoice));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = WeaponComparisonException.class)
     public void testCompareWithNullChoice() {
         paperChoice.compare(null);
     }

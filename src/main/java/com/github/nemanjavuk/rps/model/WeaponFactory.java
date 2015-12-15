@@ -1,13 +1,15 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.InvalidInputException;
+
 /**
- * Created by nemanja on 12/13/15.
+ * Created by nemanja.
  */
 public class WeaponFactory {
 
-    public static Weapon createWeapon(String input) {
+    public Weapon createWeapon(String input) {
         if (input == null || input.isEmpty()) {
-            throw new RuntimeException("input must be a first letter of a choice");
+            throw new InvalidInputException("input must be a first letter of a choice");
         }
         if (WeaponType.ROCK.getCode().equalsIgnoreCase(input)) {
             return new RockWeapon();
@@ -16,13 +18,13 @@ public class WeaponFactory {
         } else if (WeaponType.SCISSORS.getCode().equalsIgnoreCase(input)) {
             return new ScissorsWeapon();
         } else {
-            throw new RuntimeException("Wrong input, try again");
+            throw new InvalidInputException("Wrong input, try again");
         }
     }
 
-    public static Weapon createWeapon(WeaponType weaponType) {
+    public Weapon createWeapon(WeaponType weaponType) {
         if (weaponType == null) {
-            throw new NullPointerException("valid input needed");
+            throw new InvalidInputException("valid input needed");
         }
         switch (weaponType) {
             case ROCK:
@@ -32,7 +34,7 @@ public class WeaponFactory {
             case SCISSORS:
                 return new ScissorsWeapon();
             default:
-                throw new RuntimeException("I don't know what to create");
+                throw new InvalidInputException("I don't know what to create");
         }
     }
 }

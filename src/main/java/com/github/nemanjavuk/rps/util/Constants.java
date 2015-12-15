@@ -14,10 +14,13 @@ public class Constants {
     public static final String NO = "n";
     public static final String QUIT = "q";
     public static final String OK_AS_YOU_WISH = "Ok, as you wish...";
-    public static final String GO_FOR_ANOTHER_TURN = "Would you like them to go for another turn? [Y]es [N]o?";
-
+    public static final String GO_FOR_ANOTHER_TURN = "Would you like to go for another turn? [Y]es [N]o?";
     public static final String LET_S_GO_FOR_ANOTHER_TURN = "Let's go for another turn";
     public static final String BYE = ":'( Bye, bye, see you someday...";
     public static final String FINAL_RESULT_IS = "Final result is ";
     public static final String CHOOSE_WEAPON = "Choose [R]ock, [P]aper or [S]cissors";
+    public static final String HUMAN_VS_COMPUTER = "h";
+    public static final String COMPUTER_VS_COMPUTER = "c";
+
+
 }

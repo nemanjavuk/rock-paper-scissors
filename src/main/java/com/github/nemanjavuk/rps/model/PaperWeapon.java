@@ -1,5 +1,7 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.WeaponComparisonException;
+
 /**
  * Created by nemanja.
  */
@@ -12,7 +14,7 @@ public class PaperWeapon extends Weapon {
     @Override
     public BattleOutcome compare(Weapon otherWeapon) {
         if (otherWeapon == null) {
-            throw new NullPointerException();
+            throw new WeaponComparisonException("can't compare with null weapon");
         }
         switch (otherWeapon.getWeaponType()) {
             case PAPER:

@@ -1,5 +1,7 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.InvalidGameStateException;
+
 /**
  * Created by nemanja.
  */
@@ -26,7 +28,7 @@ public class Game {
                     break;
             }
         } else {
-            throw new RuntimeException("wait for all players to make their choice");
+            throw new InvalidGameStateException("wait for all players to make their choice");
         }
     }
 

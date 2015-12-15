@@ -1,18 +1,26 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.InvalidInputException;
+
 /**
  * Created by nemanja.
  */
 public class PlayCommandFactory {
 
-    public static PlayCommand createPlayCommandFromInput(String input) {
-        if (input == null || input.isEmpty()) {
-            throw new RuntimeException("Wrong input, try again");
-        }
-        return new PlayCommand(input);
+    private WeaponFactory weaponFactory;
+
+    public PlayCommandFactory(WeaponFactory weaponFactory) {
+        this.weaponFactory = weaponFactory;
     }
 
-    public static PlayCommand createRandomPlayCommand() {
-        return new PlayCommand();
+    public PlayCommand createPlayCommandFromInput(String input) {
+        if (input == null || input.isEmpty()) {
+            throw new InvalidInputException("Wrong input, try again");
+        }
+        return new PlayCommand(input, weaponFactory);
+    }
+
+    public PlayCommand createRandomPlayCommand() {
+        return new PlayCommand(weaponFactory);
     }
 }

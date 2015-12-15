@@ -1,6 +1,8 @@
 package com.github.nemanjavuk.rps.model;
 
+import com.github.nemanjavuk.rps.model.exceptions.InvalidInputException;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -8,9 +10,16 @@ import org.junit.Test;
  */
 public class WeaponFactoryTest {
 
+    private WeaponFactory weaponFactory;
+
+    @Before
+    public void setUp() {
+        weaponFactory = new WeaponFactory();
+    }
+
     @Test
     public void testCreateRockChoiceStringInput() {
-        Weapon weapon = WeaponFactory.createWeapon("r");
+        Weapon weapon = weaponFactory.createWeapon("r");
 
         Assert.assertEquals(RockWeapon.class, weapon.getClass());
         Assert.assertNotEquals(PaperWeapon.class, weapon.getClass());
@@ -18,59 +27,59 @@ public class WeaponFactoryTest {
 
     @Test
     public void testCreateRockChoiceEnumInput() {
-        Weapon weapon = WeaponFactory.createWeapon(WeaponType.ROCK);
+        Weapon weapon = weaponFactory.createWeapon(WeaponType.ROCK);
 
         Assert.assertEquals(RockWeapon.class, weapon.getClass());
     }
 
     @Test
     public void testCreatePaperChoiceStringInput() {
-        Weapon weapon = WeaponFactory.createWeapon("p");
+        Weapon weapon = weaponFactory.createWeapon("p");
 
         Assert.assertEquals(PaperWeapon.class, weapon.getClass());
     }
 
     @Test
     public void testCreatePaperChoiceEnumInput() {
-        Weapon weapon = WeaponFactory.createWeapon(WeaponType.PAPER);
+        Weapon weapon = weaponFactory.createWeapon(WeaponType.PAPER);
 
         Assert.assertEquals(PaperWeapon.class, weapon.getClass());
     }
 
     @Test
     public void testCreateScissorsChoiceStringInput() {
-        Weapon weapon = WeaponFactory.createWeapon("s");
+        Weapon weapon = weaponFactory.createWeapon("s");
 
         Assert.assertEquals(ScissorsWeapon.class, weapon.getClass());
     }
 
     @Test
     public void testCreateScissorsChoiceEnumInput() {
-        Weapon weapon = WeaponFactory.createWeapon(WeaponType.SCISSORS);
+        Weapon weapon = weaponFactory.createWeapon(WeaponType.SCISSORS);
 
         Assert.assertEquals(ScissorsWeapon.class, weapon.getClass());
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = InvalidInputException.class)
     public void testCreateChoiceWithWrongStringInput() {
-        Weapon weapon = WeaponFactory.createWeapon("abrakadabra");
+        Weapon weapon = weaponFactory.createWeapon("abrakadabra");
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = InvalidInputException.class)
     public void testCreateChoiceWithNullStringInput() {
         String input = null;
-        Weapon weapon = WeaponFactory.createWeapon(input);
+        Weapon weapon = weaponFactory.createWeapon(input);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = InvalidInputException.class)
     public void testCreateChoiceWithEmptyStringInput() {
         String input = "";
-        Weapon weapon = WeaponFactory.createWeapon(input);
+        Weapon weapon = weaponFactory.createWeapon(input);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = InvalidInputException.class)
     public void testCreateChoiceWithNullEnumInput() {
         WeaponType option = null;
-        Weapon weapon = WeaponFactory.createWeapon(option);
+        Weapon weapon = weaponFactory.createWeapon(option);
     }
 }
