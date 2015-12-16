@@ -1,7 +1,10 @@
 # rock-paper-scissors
 
 ## Running the app (*nix systems)
+
 To run the application from terminal git clone the project and then type: `./gradlew run -q`
+
+To build the application from terminal type: `./gradlew build`
 
 To run the tests from terminal type: `./gradlew test`
 
